@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Even Counter</title>
+        <style>
+            button{
+                border-radius: 5px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                height: 35px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><b>Enter a number:</b></h1>
+
+            <input type="text" id="numCheck" style="width: 150px"><br style="line-height: 40px"/>
+            <button onclick="getEvens()" id="button">Display Even Numbers</button>
+
+        <p id="evensBetween"></p>
+        <script>
+            document.getElementById("button").style.backgroundColor = 'blue';
+            document.getElementById("button").style.color = 'white';
+            function getEvens() {
+                let text = "Even numbers between 0 and ";
+                var x = document.getElementById("numCheck").value;
+                text += x + " are: ";
+                for (let i = 2; i < x; i+=2){
+                    if (i+2 >= x){
+                        text += i;
+                    }else{
+                        text += i + ", ";
+                    }
+                }
+                document.getElementById("evensBetween").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>
